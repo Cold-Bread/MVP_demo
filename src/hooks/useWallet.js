@@ -2,21 +2,20 @@ import { useState, useEffect } from "react";
 import { atom, useAtom } from "jotai";
 import { ethers } from "ethers";
 
-export const walletAtom = atom({
+const walletAtom = atom({
     address: null,
     signer: null,
     network: null,
   });
 
   const useWallet = () => {
-    const [wallet, SetWallet] = useAtom(walletAtom);
+    const [wallet, setWallet] = useAtom(walletAtom);
 
-    async function connectWallet(walletAtom) {
+    async function connectWallet() {
         if(!window.ethereum) {
             return
         }
-        else{
-            try{
+        try{
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             await provider.send("eth_requestAccounts", []);
 
@@ -26,14 +25,13 @@ export const walletAtom = atom({
 
             setWallet({signer, address, network});
 
-            }catch(error){
-                console.log(error);
-                return;
-            }
-        } 
+        }catch(error){
+            console.log(error);
+            return;
+        }
     };
 
-    async function disconnectWallet(walletAtom) {
+    async function disconnectWallet() {
         setWalletAtom({ address: null, signer: null, network: null });
     };
 

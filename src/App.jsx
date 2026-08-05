@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import useDarkMode from './hooks/useDarkMode';
+import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
@@ -12,7 +14,14 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
 
+
 function App() {
+  const { isDark } = useDarkMode();
+
+  useEffect(() => {
+      document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col">

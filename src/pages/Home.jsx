@@ -490,8 +490,8 @@ function Home() {
           className="max-w-3xl mx-auto"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-secondary-600">Find answers to common questions about our platform, cryptocurrency payments, and real estate investment.</p>
+            <h2 className="text-3xl font-bold mb-4 dark:text-secondary-100">Frequently Asked Questions</h2>
+            <p className="text-secondary-600 dark:text-secondary-300">Find answers to common questions about our platform, cryptocurrency payments, and real estate investment.</p>
           </div>
           <div className="space-y-8">
             {faqSections.map((section, sectionIndex) => (

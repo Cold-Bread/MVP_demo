@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { atom, useAtom } from "jotai";
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import useWallet from '../../hooks/useWallet';
+import useDarkMode from '../../hooks/useDarkMode';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { wallet, connectWallet, isConnected } = useWallet();
+  const { isDark, setIsDark } = useDarkMode();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -46,6 +47,10 @@ function Navbar() {
             >
               Connect
             </button>
+            <button className="btn"
+            onClick={() => setIsDark(!isDark)}>
+                {isDark ? 'Light Mode' : 'Dark Mode'}
+              </button>
           </div>
 
           {/* Mobile menu button */}
@@ -79,6 +84,9 @@ function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Connect
+              </button>
+              <button onClick={() => setIsDark(!isDark)}>
+                Dark Mode
               </button>
             </div>
           </div>

@@ -150,7 +150,7 @@ function Properties() {
   });
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-900">
       {/* Header */}
       <div className="bg-white shadow">
         <div className="container py-6">

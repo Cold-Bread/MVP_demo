@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-
+import useDarkMode from '../hooks/useDarkMode';
 function FAQ() {
   const [openSections, setOpenSections] = useState({});
 
@@ -186,22 +186,22 @@ function FAQ() {
  
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-16">
+    <div className="min-h-screen bg-secondary-50 py-16 dark:bg-secondary-900">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-4xl font-bold text-center mb-4">Frequently Asked Questions</h1>
-          <p className="text-secondary-600 text-center mb-12">
+          <h1 className="text-4xl font-bold text-center mb-4 dark:text-secondary-100">Frequently Asked Questions</h1>
+          <p className="text-secondary-600 text-center mb-12dark:text-secondary-300">
             Find answers to common questions about our platform, cryptocurrency payments, and real estate investment.
           </p>
 
           <div className="space-y-8">
             {faqSections.map((section, sectionIndex) => (
               <div key={sectionIndex} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <h2 className="text-xl font-semibold p-6 bg-secondary-50">
+                <h2 className="text-xl font-semibold p-6 bg-secondary-50 dark:text-*">
                   {section.title}
                 </h2>
                 <div className="divide-y divide-secondary-100">
@@ -211,7 +211,7 @@ function FAQ() {
                         className="w-full flex justify-between items-center text-left"
                         onClick={() => toggleSection(section.title, questionIndex)}
                       >
-                        <span className="font-medium">{item.question}</span>
+                        <span className="font-medium text-secondary-800">{item.question}</span>
                         {openSections[`${section.title}-${questionIndex}`] ? (
                           <FiChevronUp className="flex-shrink-0 ml-4" />
                         ) : (
