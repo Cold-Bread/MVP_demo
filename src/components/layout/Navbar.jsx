@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { atom, useAtom } from "jotai";
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
+import useWallet from '../../hooks/useWallet';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { wallet, connectWallet, isConnected } = useWallet();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -38,7 +41,7 @@ function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button
+            <button onClick={connectWallet}
               className="btn"
             >
               Connect

@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { FiHome, FiMaximize2, FiCalendar, FiTrendingUp, FiUsers, FiDollarSign, FiGrid } from 'react-icons/fi';
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from 'react-share';
 import { FaFacebook, FaTwitter, FaLinkedin, FaEthereum, FaWallet } from 'react-icons/fa';
+import useWallet from '../hooks/useWallet';
 
 function PropertyDetail() {
   const { id } = useParams();
-
+  const { wallet, connectWallet, isConnected } = useWallet();
+  
   const property = {
     id: parseInt(id),
     title: 'Modern Villa with Pool',
@@ -288,7 +290,7 @@ function PropertyDetail() {
                 View 3D version
               </Link>
 
-              <button className="btn w-full mb-4 flex items-center justify-center">
+              <button className="btn w-full mb-4 flex items-center justify-center" onClick={connectWallet}> 
                 <FaWallet className="mr-2" />
                 Connect Wallet to Invest
               </button>
