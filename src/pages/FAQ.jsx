@@ -194,7 +194,7 @@ function FAQ() {
           className="max-w-3xl mx-auto"
         >
           <h1 className="text-4xl font-bold text-center mb-4 dark:text-secondary-100">Frequently Asked Questions</h1>
-          <p className="text-secondary-600 text-center mb-12dark:text-secondary-300">
+          <p className="text-secondary-600 text-center mb-12 dark:text-secondary-300">
             Find answers to common questions about our platform, cryptocurrency payments, and real estate investment.
           </p>
 
