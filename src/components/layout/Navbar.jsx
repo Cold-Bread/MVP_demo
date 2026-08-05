@@ -45,7 +45,7 @@ function Navbar() {
             <button onClick={connectWallet}
               className="btn"
             >
-              Connect
+              {isConnected ? 'Connected' : 'Connect'}
             </button>
             <button className="btn"
             onClick={() => setIsDark(!isDark)}>
@@ -83,7 +83,7 @@ function Navbar() {
                 className="block px-3 py-2 text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
                 onClick={() => setIsOpen(false)}
               >
-                Connect
+                {isConnected ? 'Connected' : 'Connect'}
               </button>
               <button onClick={() => setIsDark(!isDark)}>
                 Dark Mode

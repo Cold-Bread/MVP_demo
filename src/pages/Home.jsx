@@ -421,7 +421,7 @@ function Home() {
               className="btn bg-primary-700 hover:bg-primary-800"
             >
               <FaWallet className="mr-2" />
-              Connect Wallet
+              {isConnected ? 'Connected' : 'Connect Wallet'}
             </button>
           </div>
         </div>

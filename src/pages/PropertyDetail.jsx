@@ -292,7 +292,7 @@ function PropertyDetail() {
 
               <button className="btn w-full mb-4 flex items-center justify-center" onClick={connectWallet}> 
                 <FaWallet className="mr-2" />
-                Connect Wallet to Invest
+                {isConnected ? 'Connected' : 'Connect Wallet to Invest'}
               </button>
               
               <div className="flex items-center justify-center space-x-4 pt-4 border-t">
