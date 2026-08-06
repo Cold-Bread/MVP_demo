@@ -277,18 +277,18 @@ function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-secondary-900 text-white py-16">
+      <section className="bg-secondary-900 text-white dark:bg-secondary-100 dark:text-secondary-900 py-16">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">How RentVerse Works</h2>
-            <p className="text-secondary-300">Understanding our tokenized real estate platform</p>
+            <h2 className="text-3xl font-bold mb-4 dark:text-secondary-900">How RentVerse Works</h2>
+            <p className="text-secondary-300 dark:text-secondary-700">Understanding our tokenized real estate platform</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {howItWorks.map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-secondary-800 p-6 rounded-lg"
+                className="bg-secondary-800 text-white dark:bg-secondary-200 dark:text-secondary-900 p-6 rounded-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -297,8 +297,8 @@ function Home() {
                 <div className="bg-primary-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <item.icon className="text-2xl text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-center">{item.title}</h3>
-                <p className="text-secondary-300 text-center">{item.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-center dark:text-secondary-900">{item.title}</h3>
+                <p className="text-secondary-300 dark:text-secondary-700 text-center">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -308,8 +308,8 @@ function Home() {
       {/* Featured Properties */}
       <section className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Investment Opportunities</h2>
-          <p className="text-secondary-600">Curated properties with verified returns and immediate tokenization</p>
+          <h2 className="text-3xl font-bold mb-4 dark:text-secondary-100">Featured Investment Opportunities</h2>
+          <p className="text-secondary-600 dark:text-secondary-300">Curated properties with verified returns and immediate tokenization</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -377,26 +377,26 @@ function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-secondary-50 pt-16">
+      <section className="bg-secondary-50 dark:bg-secondary-900 pt-16">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose RentVerse</h2>
-            <p className="text-secondary-600">Experience the future of real estate investment</p>
+            <h2 className="text-3xl font-bold mb-4 dark:text-secondary-100">Why Choose RentVerse</h2>
+            <p className="text-secondary-600 dark:text-secondary-300">Experience the future of real estate investment</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white dark:bg-secondary-800 p-6 rounded-lg shadow-md text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
               >
                 <advantage.icon className="text-4xl text-primary-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{advantage.title}</h3>
-                <p className="text-secondary-600">{advantage.description}</p>
+                <h3 className="text-xl font-semibold mb-2 dark:text-secondary-100">{advantage.title}</h3>
+                <p className="text-secondary-600 dark:text-secondary-300">{advantage.description}</p>
               </motion.div>
             ))}
           </div>
