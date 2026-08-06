@@ -6,6 +6,9 @@ const orderRouter = require("./routes/orderRoute");
 const paymentRouter = require("./routes/paymentRoute");
 const productRouter = require("./routes/productRoute");
 const userRouter = require("./routes/userRoute");
+const blockchainRouter = require("./routes/blockchain/blockchainRoute");
+const realEstateRouter = require("./routes/blockchain/realEstateRoute");
+const escrowRouter = require("./routes/blockchain/escrowRoute");
 
 const app = express();
 
@@ -16,6 +19,9 @@ app.use('/api/order', orderRouter);
 app.use('/api/payment', paymentRouter);
 app.use('/api/product', productRouter);
 app.use('/api/user', userRouter);
+app.use('/api/blockchain', blockchainRouter);
+app.use('/api/escrow', escrowRouter);
+app.use('/api/realestate', realEstateRouter);
 
 // deployment
 __dirname = path.resolve();

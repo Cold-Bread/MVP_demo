@@ -32,7 +32,7 @@ const walletAtom = atom({
     };
 
     async function disconnectWallet() {
-        setWalletAtom({ address: null, signer: null, network: null });
+        setWallet({ address: null, signer: null, network: null });
     };
 
     return { wallet, connectWallet, disconnectWallet, isConnected: !!wallet.address };
