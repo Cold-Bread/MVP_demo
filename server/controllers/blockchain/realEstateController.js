@@ -1,5 +1,4 @@
 const asyncErrorHandler = require("../../middlewares/helpers/asyncErrorHandler");
-const ErrorHandler = require("../../utils/errorHandler");
 const realEstateContract = require("../../services/blockchainService.js");
 
 exports.mint = asyncErrorHandler(async (req, res, next) => {
