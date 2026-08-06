@@ -2,19 +2,12 @@ const express = require("express");
 
 const {
     mint,
-    totalSupply,
+    getTotalSupply,
   } = require("../../controllers/blockchain/realEstateController");
 
 const router = express.Router();
   
 router.route("/mint").post(mint);
-router.route("/totalsupply").post(totalSupply);
+router.route("/totalsupply").post(getTotalSupply);
 
 module.exports = router;
-
-  
-/*
-list of endpoints for realEstate contract:
-mint()
-totalSupply()
-*/

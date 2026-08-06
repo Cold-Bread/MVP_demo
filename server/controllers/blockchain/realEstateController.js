@@ -1,13 +1,13 @@
 const asyncErrorHandler = require("../../middlewares/helpers/asyncErrorHandler");
-const realEstateContract = require("../../services/blockchainService.js");
+const blockchainService = require("../../services/blockchainService");
 
 exports.mint = asyncErrorHandler(async (req, res, next) => {
 
-    res.status(200).json({message: ""})
+    res.status(200).json({success: false, /* ...await blockchainService.mint() */})
 });
 
-exports.totalSupply = asyncErrorHandler(async (req, res, next) => {
-    const supply = await realEstateContract.totalSupply();
-    res.status(200).json({ success: true, totalSupply: supply});
+exports.getTotalSupply = asyncErrorHandler(async (req, res, next) => {
+    const supply = await blockchainService.getTotalSupply();
+res.status(200).json({ success: true, totalSupply: supply});
 });
 

@@ -18,25 +18,3 @@ router.route("/cancelSale").post(cancelSale);
 router.route("/finalizeTransaction").post(finalizeTransaction);
 
 module.exports = router;
-
-
-
-/*
-list of endpoints for escrow contract:
-//buyer
-depositEarnest()
-approveSale()
-
-//seller
-list()
-approveSale()
-
-//inspector
-updateInspectionStatus()
-
-
-//helper
-cancelSale(inspectionStatus)
-finalizeTransaction(inspectionStatus)
-
-*/

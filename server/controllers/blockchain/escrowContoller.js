@@ -1,27 +1,26 @@
 const asyncErrorHandler = require("../../middlewares/helpers/asyncErrorHandler");
-const ErrorHandler = require("../../utils/errorHandler");
+const blockchainService = require("../../services/blockchainService");
 
 exports.depositEarnest = asyncErrorHandler(async (req, res, next) => {
-
-    res.status(200).json({message: ""})
+    res.status(501).json({ success: false, /* ...await blockchainService.depositEarnest() */ });
 });
 
 exports.list = asyncErrorHandler(async (req, res, next) => {
-
-    res.status(200).json({message: ""})
+    res.status(200).json({success: false, /* ...await blockchainService.list() */})
 });
 
 exports.approveSale = asyncErrorHandler(async (req, res, next) => {
-
-    res.status(200).json({message: ""})
+    res.status(200).json({success: false, /* ...await blockchainService.approveSale() */})
 });
 
 exports.cancelSale = asyncErrorHandler(async (req, res, next) => {
-
-    res.status(200).json({message: ""})
+    res.status(200).json({success: false, /* ...await blockchainService.cancelSale() */})
 });
 
 exports.updateInspectionStatus = asyncErrorHandler(async (req, res, next) => {
+    res.status(200).json({success: false, /* ...await blockchainService.updateInspectionStatus() */})
+});
 
-    res.status(200).json({message: ""})
+exports.finalizeTransaction = asyncErrorHandler(async (req, res, next) => {
+    res.status(200).json({success: false, /* ...await blockchainService.finalizeTransaction() */})
 });

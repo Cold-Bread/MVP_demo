@@ -1,22 +1,14 @@
 const asyncErrorHandler = require("../../middlewares/helpers/asyncErrorHandler");
-const ErrorHandler = require("../../utils/errorHandler");
+const blockchainService = require("../../services/blockchainService");
+
 
 //general blockchain endpoints
 //specifc contract endpoints are handled in their respective controllers
 
 exports.config = asyncErrorHandler(async (req, res, next) => {
-
-    res.status(200).json({message: ""})
+    res.status(200).json({ success: true, ...await blockchainService.config() })
 });
 
 exports.getTokenId = asyncErrorHandler(async (req, res, next) => {
-
-    res.status(200).json({message: ""})
+    res.status(200).json({ success: true, ...await blockchainService.getTokenId() })
 });
-
-/*
-general endpoints:
-config() - grab adresses from contracts
-getTokenId() - /nft/:tokenId => get token URI
-
-*/
