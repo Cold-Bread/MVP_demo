@@ -31,6 +31,7 @@ const walletAtom = atom({
         }
     };
 
+    //currently not used. implemented for demo purposes
     async function disconnectWallet() {
         setWallet({ address: null, signer: null, network: null });
     };

@@ -1,6 +1,7 @@
 const express = require("express");
 const {
     config,
+    getTokenId
   } = require("../../controllers/blockchain/blockchainController");
 
 const router = express.Router();

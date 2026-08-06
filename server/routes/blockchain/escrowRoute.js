@@ -10,12 +10,12 @@ const {
 
 const router = express.Router();
 //escrow
-router.route("/escrow/depositEarnest").post(depositEarnest);
-router.route("/escrow/list").post(list);
-router.route("/escrow/approveSale").post(approveSale);
-router.route("/escrow/updateInspectionStatus").post(updateInspectionStatus);
-router.route("/escrow/cancelSale").post(cancelSale(inspectionStatus));
-router.route("/escrow/finalizeTransaction").post(finalizeTransaction(inspectionStatus));
+router.route("/depositEarnest").post(depositEarnest);
+router.route("/list").post(list);
+router.route("/approveSale").post(approveSale);
+router.route("/updateInspectionStatus").post(updateInspectionStatus);
+router.route("/cancelSale").post(cancelSale);
+router.route("/finalizeTransaction").post(finalizeTransaction);
 
 module.exports = router;
 

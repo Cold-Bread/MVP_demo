@@ -7,8 +7,8 @@ const {
 
 const router = express.Router();
   
-router.route("/realestate/mint").post(mint);
-router.route("/realestate/totalsupply").post(totalSupply);
+router.route("/mint").post(mint);
+router.route("/totalsupply").post(totalSupply);
 
 module.exports = router;
 

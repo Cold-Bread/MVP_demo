@@ -1,5 +1,5 @@
-const asyncErrorHandler = require("../middlewares/helpers/asyncErrorHandler");
-const ErrorHandler = require("../utils/errorHandler");
+const asyncErrorHandler = require("../../middlewares/helpers/asyncErrorHandler");
+const ErrorHandler = require("../../utils/errorHandler");
 
 exports.depositEarnest = asyncErrorHandler(async (req, res, next) => {
 
